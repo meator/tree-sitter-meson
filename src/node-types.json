@@ -85,6 +85,7 @@
   {
     "type": "build_definition",
     "named": true,
+    "root": true,
     "fields": {},
     "children": {
       "multiple": true,
@@ -96,11 +97,6 @@
         }
       ]
     }
-  },
-  {
-    "type": "comment",
-    "named": true,
-    "fields": {}
   },
   {
     "type": "condition",
@@ -742,10 +738,6 @@
     "named": false
   },
   {
-    "type": "#",
-    "named": false
-  },
-  {
     "type": "%",
     "named": false
   },
@@ -896,6 +888,11 @@
   {
     "type": "break",
     "named": true
+  },
+  {
+    "type": "comment",
+    "named": true,
+    "extra": true
   },
   {
     "type": "continue",
