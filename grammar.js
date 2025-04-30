@@ -106,7 +106,7 @@ module.exports = grammar({
     dictionary_literal: ($) => seq("{", optional($._key_value_list), "}"),
 
     key_value_item: ($) =>
-      seq(field("key", $.expression), ":", field("value", $.expression)),
+      seq(field("key", $.expression), ":", field("value", $.argument)),
 
     _key_value_list: ($) =>
       seq($.key_value_item, repeat(seq(",", $.key_value_item))),
@@ -238,7 +238,7 @@ module.exports = grammar({
       seq($.keyword_argument, repeat(seq(",", $.keyword_argument))),
 
     keyword_argument: ($) =>
-      seq(field("keyword", $.identifier), ":", $.expression),
+      seq(field("keyword", $.identifier), ":", $.argument),
 
     method_expression: ($) =>
       prec.left(seq($.expression, ".", $.function_expression)),
